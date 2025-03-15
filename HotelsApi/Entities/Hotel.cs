@@ -12,5 +12,4 @@ public partial class Hotel
     public string HotelName { get; set; } = null!;
 
     public string HotelDescription { get; set; } = null!;
-
 }

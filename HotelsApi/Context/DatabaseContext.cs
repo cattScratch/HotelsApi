@@ -44,7 +44,7 @@ public partial class DatabaseContext : DbContext
             entity.ToTable("Barangay");
 
             entity.Property(e => e.BarangayId)
-                .HasMaxLength(100)
+                .ValueGeneratedNever()
                 .HasColumnName("barangayId");
             entity.Property(e => e.BarangayName)
                 .HasMaxLength(100)
@@ -78,7 +78,7 @@ public partial class DatabaseContext : DbContext
             entity.ToTable("Country");
 
             entity.Property(e => e.CountryId)
-                .HasMaxLength(100)
+                .ValueGeneratedNever()
                 .HasColumnName("countryId");
             entity.Property(e => e.CountryCode)
                 .HasMaxLength(100)
@@ -91,6 +91,8 @@ public partial class DatabaseContext : DbContext
         modelBuilder.Entity<Hotel>(entity =>
         {
             entity.HasKey(e => e.HotelId).HasName("PRIMARY");
+
+            entity.ToTable("Hotel");
 
             entity.Property(e => e.HotelId)
                 .ValueGeneratedNever()
